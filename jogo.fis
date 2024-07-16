@@ -1,0 +1,69 @@
+[System]
+Name='jogo'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='ammo'
+Range=[-20 120]
+NumMFs=5
+MF1='very_low':'trapmf',[-120 -23.5 0 25]
+MF2='low':'trimf',[0 25 50]
+MF3='medium':'trimf',[25 50 75]
+MF4='high':'trimf',[50 75 100]
+MF5='very_high':'trapmf',[75 100 123.5 151.5]
+
+[Input2]
+Name='health'
+Range=[-20 120]
+NumMFs=5
+MF1='very_low':'trapmf',[-120 -23.5 0 25]
+MF2='low':'trimf',[0 25 50]
+MF3='medium':'trimf',[25 50 75]
+MF4='high':'trimf',[50 75 100]
+MF5='very_high':'trapmf',[75 100 123.5 151.5]
+
+[Output1]
+Name='action'
+Range=[-20 120]
+NumMFs=5
+MF1='hide':'trapmf',[-120 -23.5 0 25]
+MF2='run_away':'trimf',[0 25 50]
+MF3='stop':'trimf',[25 50 75]
+MF4='walk_around':'trimf',[50 75 100]
+MF5='attack':'trapmf',[75 100 123.5 151.5]
+
+[Rules]
+1 5, 3 (1) : 1
+2 4, 3 (1) : 1
+3 2, 2 (1) : 1
+4 1, 2 (1) : 1
+1 1, 1 (1) : 1
+2 1, 1 (1) : 1
+3 1, 2 (1) : 1
+5 1, 3 (1) : 1
+1 2, 1 (1) : 1
+2 2, 2 (1) : 1
+4 2, 3 (1) : 1
+5 2, 4 (1) : 1
+1 3, 2 (1) : 1
+2 3, 2 (1) : 1
+3 3, 3 (1) : 1
+4 3, 4 (1) : 1
+5 3, 4 (1) : 1
+1 4, 2 (1) : 1
+3 4, 4 (1) : 1
+4 4, 4 (1) : 1
+5 4, 5 (1) : 1
+2 5, 4 (1) : 1
+3 5, 4 (1) : 1
+4 5, 5 (1) : 1
+5 5, 5 (1) : 1
